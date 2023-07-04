@@ -10,6 +10,7 @@ This Application is a NextJs app that demonstrates displaying and managing list 
 - **TypeScript 5.1**: Selected for its static typing to enhance the robustness and reliability of the application.
 - **React-Query**: Used it to utilize its feature to handle api calls, including caching revalidation and rerendering optimization.
 - **Redux-Toolkit**: Used to share state between pages (User and UserList) without refetching. And to demonstrates the simplicity of the latest Redux implementation.
+- **React-Hook-Form**: Used to handle form validation and submission with zod package.
 - **TailwindCSS 3**: Easier to setup use. A utility-first CSS framework used for quickly building designs.
 - **Jest/React-Testing-Library**: Required for testing React components.
 - **Storybook 7**: This is to showcase the support for UX/UI designers and developers. Only one component is shown being rendered as an independent entity.
