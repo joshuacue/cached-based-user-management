@@ -15,6 +15,7 @@ export function UserCard(props: UserCardProps) {
     onFavoriteClick,
     onDeleteClick,
     avatar,
+    enableEdit = true,
     ...rest
   } = props;
   const { username, ...restDetails } = rest;
@@ -47,7 +48,7 @@ export function UserCard(props: UserCardProps) {
           isFavorite={isFavorite}
           isDeleted={isDeleted}
           onFavoriteClick={onFavoriteClick}
-          onEditClick={() => setShowEditModal(true)}
+          onEditClick={enableEdit ? () => setShowEditModal(true) : () => null}
           onDeleteClick={() => setShowDeleteModal(true)}
         />
       </UserCardContainer>

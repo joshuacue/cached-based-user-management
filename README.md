@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Users List Management App
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This Application is a NextJs app that demonstrates displaying and managing list of users.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Technologies Used and Why
+- **Next.js 13**: Chose this to familiarize with the new App API in Next.js 13 and leverage its improved routing capabilities.
+- **React.js 18**: Due to being the latest version with more features and enhancements.
+- **TypeScript 5.1**: Selected for its static typing to enhance the robustness and reliability of the application.
+- **React-Query**: Used it to utilize its feature to handle api calls, including caching revalidation and rerendering optimization.
+- **Redux-Toolkit**: Used to share state between pages (User and UserList) without refetching. And to demonstrates the simplicity of the latest Redux implementation.
+- **TailwindCSS 3**: Easier to setup use. A utility-first CSS framework used for quickly building designs.
+- **Jest/React-Testing-Library**: Required for testing React components.
+- **Storybook 7**: This is to showcase the support for UX/UI designers and developers. Only one component is shown being rendered as an independent entity.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Your application is developed on Node.js version 18.12.1 and uses Yarn as its package manager. The application can be accessed locally at `localhost:3000`. It includes two pages `/users-list` and `/users-list/{userName}`. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To run it locally:
+1. Clone the repository.
+2. Ensure Node.js version 18.12.1 is installed.
+3. Run `yarn` to install dependencies.
+4. Run `yarn dev` to start the development server.
+5. Open `http://localhost:3000` in your browser.
 
-## Learn More
+Build the project with `yarn build`. For testing, use `yarn test`. To start Storybook, use `yarn storybook`.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application comes with several features including filtering, user card actions, and user profile view.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Filter Feature
 
-## Deploy on Vercel
+- `All`: Displays all users including favorites and non-deleted ones.
+- `Favorites`: Shows only users marked as favorites that are not deleted.
+- `Deleted`: Shows all deleted users. The Deleted filter acts like an archive, showing removed data even though it's not present elsewhere.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### User Card Feature
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Heart icon: Add or remove a user from favorites.
+- Edit button: Opens a form to edit user details.
+- Delete button: Deletes the user.
+
+### User Profile Page
+
+The user profile page has two main features:
+- Back button: Returns to the User List.
+- Edit button: Opens a form to update user details.
+
+Please note that since there's no backend, all changes are stored only in React-Query's cache. The state resets when the page is reloaded.

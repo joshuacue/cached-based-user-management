@@ -43,6 +43,7 @@ export function UsersList({ filter = `all` }: UsersListProps) {
             isDeleted={deletedUsersList.includes(id)}
             onDeleteClick={deleteUserById(id)}
             onFavoriteClick={toggleFavoriteById(id)}
+            enableEdit={true}
             {...rest}
           />
         ))}

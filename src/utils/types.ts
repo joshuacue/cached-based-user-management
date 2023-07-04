@@ -78,6 +78,10 @@ export interface UserCardProps extends UserType {
    * is card added to deleted list
    */
   isDeleted: boolean;
+  /**
+   *
+   */
+  enableEdit?: boolean;
 }
 export type UserActionsProps = Pick<
   UserCardProps,

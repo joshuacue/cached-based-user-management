@@ -266,5 +266,5 @@ export const mockUser = {
 
 export const mockUserWithAvatar = {
   ...mockUser,
-  avatar: `https://avatars.dicebear.com/v2/avataaars/{{${mockUser.username}}}.svg?options[mood][]=happy`
-}
+  avatar: `https://avatars.dicebear.com/v2/avataaars/{{${mockUser.username}}}.svg?options[mood][]=happy`,
+};
