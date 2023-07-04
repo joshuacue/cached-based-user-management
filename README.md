@@ -14,6 +14,9 @@ This Application is a NextJs app that demonstrates displaying and managing list 
 - **Jest/React-Testing-Library**: Required for testing React components.
 - **Storybook 7**: This is to showcase the support for UX/UI designers and developers. Only one component is shown being rendered as an independent entity.
 
+## Preview is available and Deployed on Vercel:
+### [Vercel App Link](https://user-management-next.vercel.app/) - https://user-management-next.vercel.app/
+
 ## Local Development
 
 Your application is developed on Node.js version 18.12.1 and uses Yarn as its package manager. The application can be accessed locally at `localhost:3000`. It includes two pages `/users-list` and `/users-list/{userName}`. 
