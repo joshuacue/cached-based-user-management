@@ -24,7 +24,7 @@ Your node version needs to support v18. This application is developed on Node.js
 
 To run it locally:
 1. Clone the repository.
-2. Ensure Node.js version 18.12.1 is installed.
+2. Ensure Node.js version 18 or later is installed.
 3. Run `yarn` to install dependencies.
 4. Run `yarn dev` to start the development server.
 5. Open `http://localhost:3000` in your browser.
