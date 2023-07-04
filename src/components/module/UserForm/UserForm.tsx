@@ -2,26 +2,24 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import resolver from "../../../hooks/user/useSchema";
 import { InputField } from "../../base/input-field/InputField";
-import { User, UserFormValueTypes } from "@/utils/types";
+import { UserType, UserFormValueTypes } from "@/utils/types";
 import { fields } from "@/utils/constants";
 import {
   mapUserFormStateToUser,
   mapUserToUserFormState,
+  notifyError,
+  notifySuccess,
 } from "@/utils/helpers";
 import { FormContainer } from "./FormContainer";
 import { FormButtons, FormButtonsProps } from "./FormButtons";
+import { useUpdateUser } from "@/hooks/user/useUpdateUser";
 
 export interface UserFormProps {
   /**
    * default values for the form
    * @default user item from users list queried from the endpoint
    */
-  defaultValues: User;
-  /**
-   * @param user User object with the updated values
-   * @returns void
-   */
-  onSubmit: (user: User) => void;
+  defaultValues: UserType;
   /**
    * close the modal
    * @returns void
@@ -29,11 +27,7 @@ export interface UserFormProps {
   onCancel: FormButtonsProps["onCancel"];
 }
 
-export default function UserForm({
-  defaultValues,
-  onSubmit,
-  onCancel,
-}: UserFormProps) {
+export function UserForm({ defaultValues, onCancel }: UserFormProps) {
   const {
     register,
     handleSubmit,
@@ -44,8 +38,18 @@ export default function UserForm({
     shouldFocusError: true,
   });
 
+  const { mutateAsync: updateUserMutation } = useUpdateUser();
+  const updateUser = async (data: UserType) => {
+    try {
+      await updateUserMutation(data);
+      notifySuccess("User updated successfully");
+    } catch (err) {
+      notifyError((err as Error).message);
+    }
+  };
+
   const onFormSubmit = (data: UserFormValueTypes) => {
-    onSubmit(mapUserFormStateToUser(defaultValues.id, data));
+    updateUser(mapUserFormStateToUser(defaultValues.id, data));
     onCancel();
   };
 
@@ -83,3 +87,5 @@ export default function UserForm({
     </FormContainer>
   );
 }
+
+export default UserForm;

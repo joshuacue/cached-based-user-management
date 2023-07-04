@@ -2,15 +2,16 @@ import "@testing-library/jest-dom";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { UserDetails } from "./UserDetails";
+import { mockUser } from "@/utils/__test_constants";
+
+const mockProps = {
+  name: mockUser.name,
+  email: mockUser.email,
+  phone: mockUser.phone,
+  website: mockUser.website,
+};
 
 describe("UserDetails", () => {
-  const mockProps = {
-    name: "Leanne Graham",
-    email: "Sincere@april.biz",
-    phone: "1-770-736-8031 x56442",
-    website: "hildegard.org",
-  };
-
   beforeEach(() => {
     render(<UserDetails {...mockProps} />);
   });

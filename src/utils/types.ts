@@ -1,39 +1,42 @@
-export type Geo = {
+export type GeoType = {
   lat: string;
   lng: string;
 };
 
-export type Address = {
+export type AddressType = {
   street: string;
   suite: string;
   city: string;
   zipcode: string;
-  geo: Geo;
 };
 
-export type Company = {
+export type AddressWithGeoType = AddressType & {
+  geo: GeoType;
+};
+
+export type CompanyType = {
   name: string;
   catchPhrase: string;
   bs: string;
 };
 
-export type User = {
+export type UserType = {
   id: number;
   name: string;
   username: string;
   email: string;
-  address: Address;
+  address: AddressWithGeoType;
   phone: string;
   website: string;
-  company: Company;
+  company: CompanyType;
 };
 
-export type UserWithAvatar = User & {
+export type UserWithAvatar = UserType & {
   avatar: string;
 };
 
 // Define the type for the array of users
-export type Users = UserWithAvatar[];
+export type UserListType = UserWithAvatar[];
 
 export type UserFormValueTypes = {
   name: string;
@@ -57,7 +60,7 @@ export interface FieldType {
   placeholder: string;
 }
 
-export interface UserCardProps extends User {
+export interface UserCardProps extends UserType {
   avatar: string;
   /**
    * on heart icon click event

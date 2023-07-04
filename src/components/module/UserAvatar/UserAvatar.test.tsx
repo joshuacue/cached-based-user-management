@@ -12,6 +12,8 @@ describe("UserAvatar component", () => {
     render(<UserAvatar avatar={avatarSrc} username={username} />);
     const imageElement = screen.getByAltText(`${username}-avatar`);
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement.getAttribute("src")).toContain("%2Fimages%2FtestImage.webp");
+    expect(imageElement.getAttribute("src")).toContain(
+      "%2Fimages%2FtestImage.webp",
+    );
   });
 });

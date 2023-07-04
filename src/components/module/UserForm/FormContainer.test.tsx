@@ -11,8 +11,8 @@ describe("FormContainer component", () => {
   it("renders form with correct title", () => {
     render(
       <FormContainer onSubmit={mockSubmit}>
-        {/* Add any necessary child components */}
-      </FormContainer>
+        <div></div>
+      </FormContainer>,
     );
     const formTitle = screen.getByText("Edit User Details");
     expect(formTitle).toBeInTheDocument();
@@ -21,8 +21,8 @@ describe("FormContainer component", () => {
   it("calls onSubmit when form is submitted", () => {
     render(
       <FormContainer onSubmit={mockSubmit}>
-        {/* Add any necessary child components */}
-      </FormContainer>
+        <div></div>
+      </FormContainer>,
     );
     const form = screen.getByTestId("user-form");
     fireEvent.submit(form);

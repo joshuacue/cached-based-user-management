@@ -67,3 +67,5 @@ export function FullPageLoader() {
     </div>
   );
 }
+
+export default FullPageLoader;

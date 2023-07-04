@@ -1,7 +1,7 @@
 "use client";
 import { useQuery } from "react-query";
 import axios from "axios";
-import { User } from "@/utils/types";
+import { UserType } from "@/utils/types";
 
 export function useGetUsers() {
   return useQuery(
@@ -14,7 +14,7 @@ export function useGetUsers() {
     },
     {
       staleTime: 20000,
-      select: (data: User[]) => {
+      select: (data: UserType[]) => {
         return (
           data.map((user) => ({
             ...user,

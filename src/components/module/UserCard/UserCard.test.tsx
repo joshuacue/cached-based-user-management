@@ -3,7 +3,14 @@ import "@testing-library/jest-dom/extend-expect";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { UserCard } from "./UserCard";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { mockUser } from "@/utils/__test_constants";
+
 const queryClient = new QueryClient();
+
+jest.mock("next/navigation", () => ({
+  ...require("next-router-mock"),
+  useSearchParams: () => [new URLSearchParams({ revalidate: "1" })],
+}));
 
 const mockUserProps = {
   isFavorite: true,
@@ -12,27 +19,7 @@ const mockUserProps = {
   onDeleteClick: jest.fn(),
   avatar:
     "https://avatars.dicebear.com/v2/avataaars/{{Bret}}.svg?options[mood][]=happy",
-  id: 10,
-  name: "Clementina DuBuque",
-  username: "Moriah.Stanton",
-  email: "Rey.Padberg@karina.biz",
-  address: {
-    street: "Kattie Turnpike",
-    suite: "Suite 198",
-    city: "Lebsackbury",
-    zipcode: "31428-2261",
-    geo: {
-      lat: "-38.2386",
-      lng: "57.2232",
-    },
-  },
-  phone: "024-648-3804",
-  website: "ambrose.net",
-  company: {
-    name: "Hoeger LLC",
-    catchPhrase: "Centralized empowering task-force",
-    bs: "target end-to-end models",
-  },
+  ...mockUser,
 };
 
 describe("UserCard component", () => {

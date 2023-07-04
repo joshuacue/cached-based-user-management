@@ -19,6 +19,7 @@ export const IconText: React.FC<IconTextProps> = ({
         href={href}
         target={`_blank`}
         className={`flex text-center text-gray-3 text-1.6 hover:text-green-700`}
+        onClick={(e) => e.stopPropagation()}
       >
         {text}
       </a>
@@ -27,3 +28,5 @@ export const IconText: React.FC<IconTextProps> = ({
     )}
   </div>
 );
+
+export default IconText;

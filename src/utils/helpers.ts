@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { User, UserFormValueTypes } from "./types";
+import { UserType, UserFormValueTypes } from "./types";
 
 const toastOptions = Object.freeze({
   position: "top-right",
@@ -21,7 +21,7 @@ export function notifySuccess(message: string) {
 export function mapUserFormStateToUser(
   id: number,
   formState: UserFormValueTypes,
-): User {
+): UserType {
   return {
     id,
     name: formState.name,
@@ -47,7 +47,7 @@ export function mapUserFormStateToUser(
   };
 }
 
-export function mapUserToUserFormState(user: User): UserFormValueTypes {
+export function mapUserToUserFormState(user: UserType): UserFormValueTypes {
   return {
     name: user.name,
     username: user.username,

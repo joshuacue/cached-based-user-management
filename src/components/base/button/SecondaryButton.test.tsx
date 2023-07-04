@@ -16,7 +16,7 @@ describe("SecondaryButton component", () => {
   it("applies additional class names correctly", () => {
     const additionalClassName = "custom-class";
     render(
-      <SecondaryButton className={additionalClassName}>Button</SecondaryButton>
+      <SecondaryButton className={additionalClassName}>Button</SecondaryButton>,
     );
     const buttonElement = screen.getByText("Button").closest("button");
     expect(buttonElement).toHaveClass(additionalClassName);

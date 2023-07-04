@@ -4,7 +4,7 @@ import { UserAvatarProps } from "@/utils/types";
 
 export function UserAvatar({ avatar, username }: UserAvatarProps) {
   return (
-    <div className={`bg-gray-2 pt-2`}>
+    <div className={`bg-gray-2 pt-2 rounded-t-0.4`}>
       <div className={`relative w-full h-[24em]`}>
         <Image
           src={avatar}
@@ -16,3 +16,5 @@ export function UserAvatar({ avatar, username }: UserAvatarProps) {
     </div>
   );
 }
+
+export default UserAvatar;

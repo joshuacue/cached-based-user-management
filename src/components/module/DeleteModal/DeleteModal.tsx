@@ -10,7 +10,7 @@ export interface DeleteModalProps {
 export function DeleteModal({ onCancel, onConfirm }: DeleteModalProps) {
   return (
     <div
-      className={`fixed z-50 top-0 left-0 w-screen h-screen bg-black bg-opacity-90 flex overflow-hidden justify-center items-center px-2`}
+      className={`fixed z-[9999] top-0 left-0 w-screen h-screen bg-black bg-opacity-90 flex overflow-hidden justify-center items-center px-2`}
     >
       <div
         className={`bg-white rounded-0.4 space-y-5 pt-4 pb-2 px-2 w-full max-w-[50em]`}
@@ -29,3 +29,5 @@ export function DeleteModal({ onCancel, onConfirm }: DeleteModalProps) {
     </div>
   );
 }
+
+export default DeleteModal;

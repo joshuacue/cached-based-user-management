@@ -18,3 +18,5 @@ export function FormButtons({ onCancel }: FormButtonsProps) {
     </div>
   );
 }
+
+export default FormButtons;

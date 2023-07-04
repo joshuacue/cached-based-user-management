@@ -26,3 +26,5 @@ export const FormContainer: React.FC<
     </div>
   );
 };
+
+export default FormContainer;
