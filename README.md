@@ -20,7 +20,7 @@ This Application is a NextJs app that demonstrates displaying and managing list 
 
 ## Local Development
 
-Your application is developed on Node.js version 18.12.1 and uses Yarn as its package manager. The application can be accessed locally at `localhost:3000`. It includes two pages `/users-list` and `/users-list/{userName}`. 
+Your node version needs to support v18. This application is developed on Node.js version 18.12.1 and uses Yarn as its package manager. The application can be accessed locally at `localhost:3000`. It includes two pages `/users-list` and `/users-list/{userName}`. 
 
 To run it locally:
 1. Clone the repository.
