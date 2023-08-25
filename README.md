@@ -5,7 +5,7 @@
 This Application is a NextJs app that demonstrates displaying and managing list of users.
 
 ## Technologies Used and Why
-- **Next.js 13**: Chose this to familiarize with the new App API in Next.js 13 and leverage its improved routing capabilities.
+- **Next.js 13 App Router**: Chose this to familiarize with the new App Router in Next.js 13 and leverage its improved routing capabilities.
 - **React.js 18**: Due to being the latest version with more features and enhancements.
 - **TypeScript 5.1**: Selected for its static typing to enhance the robustness and reliability of the application.
 - **React-Query**: Used it to utilize its feature to handle api calls, including caching revalidation and rerendering optimization.
